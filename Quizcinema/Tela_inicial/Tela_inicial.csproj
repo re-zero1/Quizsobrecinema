@@ -58,13 +58,46 @@
     <Compile Include="Instrucoes.Designer.cs">
       <DependentUpon>Instrucoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pergunta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pergunta1.Designer.cs">
+      <DependentUpon>Pergunta1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pergunta2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pergunta2.Designer.cs">
+      <DependentUpon>Pergunta2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pergunta3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pergunta3.Designer.cs">
+      <DependentUpon>Pergunta3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaFinal.Designer.cs">
+      <DependentUpon>TelaFinal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instrucoes.resx">
       <DependentUpon>Instrucoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pergunta1.resx">
+      <DependentUpon>Pergunta1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pergunta2.resx">
+      <DependentUpon>Pergunta2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pergunta3.resx">
+      <DependentUpon>Pergunta3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +109,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TelaFinal.resx">
+      <DependentUpon>TelaFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cinemapagina2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cinemapagina3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cinemapagina4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
