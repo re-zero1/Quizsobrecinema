@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tela_inicial
 {
-    public partial class Paginainicial : Form
+    public partial class Instrucoes : Form
     {
-        public Paginainicial()
+        public Instrucoes()
         {
             InitializeComponent();
         }
