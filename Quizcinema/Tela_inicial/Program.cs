@@ -16,7 +16,7 @@ namespace Tela_inicial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Paginainicial());
+            Application.Run(new  Paginainicial());
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Tela_inicial
     public partial class Paginainicial : Form
     {
         
-        public Paginainicial(int id_jogador)
+        public Paginainicial()
         {
             InitializeComponent();
            
@@ -65,42 +65,60 @@ namespace Tela_inicial
             if (txtNome.Text == "" && txtSobrenome.Text == "" && txtEmail.Text == "")
             {
                 MessageBox.Show("Por favor coloque um nome", "ATENÇÂO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //txtEmail.Focus();
-               // txtNome.Focus();
+                txtEmail.Focus();
+                 txtNome.Focus();
                 txtSobrenome.Focus();
             }
             //jogador cadastrado no banco de dados
             else
             {
-                using (SqlConnection conexao = new SqlConnection("Server=AME0556325W10-1\\SQLEXPRESS;Database = db_Quizcinema;Trusted_Connection= Yes")) 
-                using (SqlConnection comando = new SqlConnection("insert into tb_Players (Nome, Sobrenome, Email) OUTPUT INSERT.ID Values(@Nome, @Sobrenome, @Email)",conexao)) 
+                using (SqlConnection conexao = new SqlConnection("Server=AME0556325W10-1\\SQLEXPRESS;Database=db_Quizcinema;Trusted_Connection=Yes"))
                 {
-                    comando.Parameters.AddWithValue("Nome", txtNome.Text);
-                    comando.Parameters.AddWithValue("Sobrenome", txtSobrenome.Text);
-                    comando.Parameters.AddWithValue("Email", txtEmail.Text);
-                    conexao.Open();
-                    int Id_jogador = (int)comando.ExecuteScalar();
-                    if (Id_jogador > 0)
+                    using (SqlCommand comando = new SqlCommand("insert into tb_Players(nome, sobrenome, Email) OUTPUT INSERTED.ID_PLAYER values(@nome, @sobrenome, @Email)", conexao))
                     {
-                        MessageBox.Show("Jogador Inserido" + Id_jogador);
-                        Instrucoes itr = new Instrucoes(Id_jogador);
-                        itr.ShowDialog();
-                        Pergunta1 p1 = new Pergunta1(Id_jogador);
-                        p1.ShowDialog();
-                       /* Pergunta1 p2 = new Pergunta1(Id_jogador);
-                        p2.ShowDialog();
-                        Pergunta1 p3 = new Pergunta1(Id_jogador);
-                        p3.ShowDialog();
-                        TelaFinal tf = new TelaFinal(Id_jogador);*/
 
+                        comando.Parameters.AddWithValue("nome", txtNome.Text);
+                        comando.Parameters.AddWithValue("sobrenome", txtSobrenome.Text);
+                        comando.Parameters.AddWithValue("Email", txtEmail.Text);
+                        /*comando.Parameters.AddWithValue("nome", txtNome.Text);
+                        comando.Parameters.AddWithValue("sobrenome", txtSobrenome.Text);
+                        comando.Parameters.AddWithValue("Email", txtEmail.Text);*/
+                        conexao.Open();
+                        int id_jogador = (int)comando.ExecuteScalar();
+                        string jogador = txtNome.Text;
+                        if (id_jogador > 0)
+                        {
+                            MessageBox.Show("Jogador Inserido" + id_jogador);
+                            Instrucoes itr = new Instrucoes(id_jogador, jogador);
+                            itr.ShowDialog();
+                            Pergunta1 p1 = new Pergunta1(id_jogador, jogador);
+                            p1.ShowDialog();
+                            Pergunta2 p2 = new Pergunta2(id_jogador, jogador);
+                            p2.ShowDialog();
+                            Pergunta3 p3 = new Pergunta3(id_jogador, jogador);
+                            p3.ShowDialog();
+
+                            //pontuação do jogador
+                            comando.CommandText = "select count(pergunta) from tb_perguntas where id_jogador="  +id_jogador;
+                            SqlDataReader dr_acertos = comando.ExecuteReader();
+                            dr_acertos.Read();
+
+                            TelaFinal tf = new TelaFinal(id_jogador, jogador, dr_acertos.GetInt32(0));
+                            tf.ShowDialog();
+                            txtNome.Text = "";
+                            txtSobrenome.Text = "";
+                            txtEmail.Text = "";
+
+
+
+                        }
 
                     }
-                    
                 }
-                }
-                
+
 
             }
         }
     }
-}
+    }
+

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,21 +14,39 @@ namespace Tela_inicial
     public partial class Pergunta1 : Form
     {
         int id_jogador_BD;
-        public Pergunta1(int id_jogador)
+        string jogadorrecebe2;
+
+        public Pergunta1(int id_jogador, string jogadorecebe)
         {
             InitializeComponent();
             id_jogador_BD = id_jogador;
+            jogadorrecebe2 = jogadorecebe;
 
         }
+        
 
         private void btnProxima_Click(object sender, EventArgs e)
         {
+
             if (rdb2.Checked == true)
             {
-                MessageBox.Show("Acertou Miseravel");
-                this.Close();
+                using (SqlConnection conexao = new SqlConnection("Server=AME0556325W10-1\\SQLEXPRESS;Database=db_Quizcinema;Trusted_Connection=Yes"))
+                {
+                    using (SqlCommand comando = new SqlCommand("insert into tb_perguntas(Pergunta, resposta_correta, id_jogador, nivel, pontos) values(@Pt, @Resposcorreta, @ID_JOGADOR, @nivel, @Pontos)", conexao))
+                    {
+                        comando.Parameters.AddWithValue("pt", lblpergunta1.Text);
+                        comando.Parameters.AddWithValue("Resposcorreta", rdb2.Text );
+                        comando.Parameters.AddWithValue("ID_JOGADOR", id_jogador_BD);
+                        comando.Parameters.AddWithValue("nivel", "Facil");
+                        comando.Parameters.AddWithValue("pontos", 1);
+                        conexao.Open();
+                        comando.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Acertou Miseravel");
+                    this.Close();
 
 
+                }
             }
             else
             {
@@ -37,5 +56,16 @@ namespace Tela_inicial
             }
 
         }
+
+        private void Pergunta1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+        
+        
+        
+
+    }
+
+

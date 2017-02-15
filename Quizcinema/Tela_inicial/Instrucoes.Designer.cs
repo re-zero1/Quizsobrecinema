@@ -40,10 +40,10 @@
             this.lblinstrução.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblinstrução.Location = new System.Drawing.Point(86, 22);
             this.lblinstrução.Name = "lblinstrução";
-            this.lblinstrução.Size = new System.Drawing.Size(364, 54);
+            this.lblinstrução.Size = new System.Drawing.Size(118, 18);
             this.lblinstrução.TabIndex = 0;
-            this.lblinstrução.Text = "     \"Bem vindo\" +ID_Jogador\"NO jogo você \r\n      respondera as perguntas na tela" +
-    " pelo tema \r\n                              Cinema\"";
+            this.lblinstrução.Text = "qualquer coisa";
+            this.lblinstrução.Click += new System.EventHandler(this.lblinstrução_Click);
             // 
             // button1
             // 

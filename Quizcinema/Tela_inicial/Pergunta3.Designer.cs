@@ -109,6 +109,7 @@
             this.btnProxima.TabIndex = 7;
             this.btnProxima.Text = "Proxima";
             this.btnProxima.UseVisualStyleBackColor = false;
+            this.btnProxima.Click += new System.EventHandler(this.btnProxima_Click);
             // 
             // Pergunta3
             // 
@@ -125,6 +126,7 @@
             this.Name = "Pergunta3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pergunta3";
+            this.Load += new System.EventHandler(this.Pergunta3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

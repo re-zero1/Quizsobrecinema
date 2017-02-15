@@ -13,21 +13,31 @@ namespace Tela_inicial
     public partial class TelaFinal : Form
     {
         int id_jogador_DB;
-        int contador;
-        public TelaFinal(int id_jogador)
+        string jogadorrecebe2;
+        int pontos;
+        
+        
+        
+        // int contador;
+        public TelaFinal(int id_jogador, string jogadorecebe, int pontosrecebe)
         {
             InitializeComponent();
             id_jogador_DB = id_jogador;
+            jogadorrecebe2 = jogadorecebe;
+            pontos = pontosrecebe;
         }
 
-        private void TelaFinal_Load(object sender, EventArgs e)
+        private void btnEncerrar_Click(object sender, EventArgs e)
         {
-            if (contador = )
-            {
-               lbl
+            
+            Application.Exit();
+        }
 
-            }
-            if()
+        private void btnJogardenovo_Click(object sender, EventArgs e)
+        {
+            /*Paginainicial pn = new Paginainicial();
+            pn.Show();
+            this.Close();*/
         }
     }
 }

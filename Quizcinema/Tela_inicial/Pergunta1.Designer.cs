@@ -126,6 +126,7 @@
             this.Name = "Pergunta1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pergunta1";
+            this.Load += new System.EventHandler(this.Pergunta1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

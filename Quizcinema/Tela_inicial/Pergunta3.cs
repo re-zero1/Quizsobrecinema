@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,49 @@ namespace Tela_inicial
 {
     public partial class Pergunta3 : Form
     {
-        public Pergunta3()
+        int id_jogador_BD;
+        string jogadorrecebe2;
+        public Pergunta3(int id_jogador, string jogadorecebe)
         {
             InitializeComponent();
+            id_jogador_BD = id_jogador;
+            jogadorrecebe2 = jogadorecebe;
+        }
+
+        private void btnProxima_Click(object sender, EventArgs e)
+        {
+
+            if (rdb3.Checked == true)
+            {
+                using (SqlConnection conexao = new SqlConnection("Server=AME0556325W10-1\\SQLEXPRESS;Database=db_Quizcinema;Trusted_Connection=Yes"))
+                {
+                    using (SqlCommand comando = new SqlCommand("insert into tb_perguntas(Pergunta, resposta_correta, id_jogador, nivel, pontos) values(@Pt, @Resposcorreta, @ID_JOGADOR, @nivel, @pontos)", conexao))
+                    {
+                        comando.Parameters.AddWithValue("pt", lblpergunta3.Text);
+                        comando.Parameters.AddWithValue("Resposcorreta", rdb2.Text);
+                        comando.Parameters.AddWithValue("ID_JOGADOR", id_jogador_BD);
+                        comando.Parameters.AddWithValue("nivel", "Moderado");
+                        comando.Parameters.AddWithValue("pontos", "");
+                        conexao.Open();
+                        comando.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Acertou Miseravel");
+                    this.Close();
+
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Errou Miseravel");
+                this.Close();
+
+            }
+        }
+
+        private void Pergunta3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

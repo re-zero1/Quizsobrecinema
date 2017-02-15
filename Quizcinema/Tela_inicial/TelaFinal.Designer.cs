@@ -44,6 +44,7 @@
             this.btnJogardenovo.TabIndex = 8;
             this.btnJogardenovo.Text = "Jogar de Novo";
             this.btnJogardenovo.UseVisualStyleBackColor = false;
+            this.btnJogardenovo.Click += new System.EventHandler(this.btnJogardenovo_Click);
             // 
             // btnEncerrar
             // 
@@ -55,6 +56,7 @@
             this.btnEncerrar.TabIndex = 9;
             this.btnEncerrar.Text = "Encerrar";
             this.btnEncerrar.UseVisualStyleBackColor = false;
+            this.btnEncerrar.Click += new System.EventHandler(this.btnEncerrar_Click);
             // 
             // txtmensagemfinal
             // 
@@ -91,7 +93,6 @@
             this.Name = "TelaFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaFinal";
-            this.Load += new System.EventHandler(this.TelaFinal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
