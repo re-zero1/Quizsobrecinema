@@ -109,6 +109,7 @@
             this.btnProxima.TabIndex = 5;
             this.btnProxima.Text = "Proxima";
             this.btnProxima.UseVisualStyleBackColor = false;
+            this.btnProxima.Click += new System.EventHandler(this.btnProxima_Click);
             // 
             // Pergunta1
             // 

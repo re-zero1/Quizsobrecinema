@@ -30,8 +30,8 @@
         {
             this.btnJogardenovo = new System.Windows.Forms.Button();
             this.btnEncerrar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtmensagemfinal = new System.Windows.Forms.TextBox();
+            this.txtpontuacaofinal = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnJogardenovo
@@ -56,26 +56,26 @@
             this.btnEncerrar.Text = "Encerrar";
             this.btnEncerrar.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtmensagemfinal
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(130, 24);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(330, 93);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.Text = "Count 4\" parabens\", \r\n3 ou 2 \"foi bem\" \r\n1 ou 0\"Precisa Estudar\" ";
+            this.txtmensagemfinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmensagemfinal.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtmensagemfinal.Location = new System.Drawing.Point(130, 24);
+            this.txtmensagemfinal.Multiline = true;
+            this.txtmensagemfinal.Name = "txtmensagemfinal";
+            this.txtmensagemfinal.Size = new System.Drawing.Size(330, 93);
+            this.txtmensagemfinal.TabIndex = 10;
+            this.txtmensagemfinal.Text = "Count 4\" parabens\", \r\n3 ou 2 \"foi bem\" \r\n1 ou 0\"Precisa Estudar\" ";
             // 
-            // textBox2
+            // txtpontuacaofinal
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(130, 137);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(330, 32);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.Text = "ID_Jogador\"Sua Pontuação\" + Pontos";
+            this.txtpontuacaofinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpontuacaofinal.Location = new System.Drawing.Point(130, 137);
+            this.txtpontuacaofinal.Multiline = true;
+            this.txtpontuacaofinal.Name = "txtpontuacaofinal";
+            this.txtpontuacaofinal.Size = new System.Drawing.Size(330, 32);
+            this.txtpontuacaofinal.TabIndex = 11;
+            this.txtpontuacaofinal.Text = "ID_Jogador\"Sua Pontuação\" + Pontos";
             // 
             // TelaFinal
             // 
@@ -84,13 +84,14 @@
             this.BackgroundImage = global::Tela_inicial.Properties.Resources.cinemapagina4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(583, 301);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtpontuacaofinal);
+            this.Controls.Add(this.txtmensagemfinal);
             this.Controls.Add(this.btnEncerrar);
             this.Controls.Add(this.btnJogardenovo);
             this.Name = "TelaFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaFinal";
+            this.Load += new System.EventHandler(this.TelaFinal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,7 +101,7 @@
 
         private System.Windows.Forms.Button btnJogardenovo;
         private System.Windows.Forms.Button btnEncerrar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtmensagemfinal;
+        private System.Windows.Forms.TextBox txtpontuacaofinal;
     }
 }

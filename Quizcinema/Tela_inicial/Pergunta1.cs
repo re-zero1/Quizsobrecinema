@@ -12,9 +12,30 @@ namespace Tela_inicial
 {
     public partial class Pergunta1 : Form
     {
-        public Pergunta1()
+        int id_jogador_BD;
+        public Pergunta1(int id_jogador)
         {
             InitializeComponent();
+            id_jogador_BD = id_jogador;
+
+        }
+
+        private void btnProxima_Click(object sender, EventArgs e)
+        {
+            if (rdb2.Checked == true)
+            {
+                MessageBox.Show("Acertou Miseravel");
+                this.Close();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Errou Miseravel");
+                this.Close();
+
+            }
+
         }
     }
 }

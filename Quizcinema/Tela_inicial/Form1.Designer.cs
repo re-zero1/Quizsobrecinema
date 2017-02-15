@@ -88,27 +88,39 @@
             // 
             // txtNome
             // 
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(197, 81);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(254, 32);
             this.txtNome.TabIndex = 34;
+            this.txtNome.Text = "Digite seu nome";
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // txtSobrenome
             // 
+            this.txtSobrenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSobrenome.Location = new System.Drawing.Point(197, 127);
             this.txtSobrenome.Multiline = true;
             this.txtSobrenome.Name = "txtSobrenome";
             this.txtSobrenome.Size = new System.Drawing.Size(254, 32);
             this.txtSobrenome.TabIndex = 35;
+            this.txtSobrenome.Text = "Digite seu Sobrenome";
+            this.txtSobrenome.Enter += new System.EventHandler(this.txtSobrenome_Enter);
+            this.txtSobrenome.Leave += new System.EventHandler(this.txtSobrenome_Leave);
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(197, 172);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(254, 32);
             this.txtEmail.TabIndex = 36;
+            this.txtEmail.Text = "Digite seu Email";
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // btnComeca
             // 
@@ -120,6 +132,7 @@
             this.btnComeca.TabIndex = 37;
             this.btnComeca.Text = "Começar";
             this.btnComeca.UseVisualStyleBackColor = false;
+            this.btnComeca.Click += new System.EventHandler(this.btnComeca_Click);
             // 
             // Paginainicial
             // 
@@ -140,7 +153,6 @@
             this.Name = "Paginainicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paginainicial";
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
