@@ -93,6 +93,7 @@
             this.Name = "TelaFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaFinal";
+            this.Load += new System.EventHandler(this.TelaFinal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

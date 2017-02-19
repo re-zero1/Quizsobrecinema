@@ -62,6 +62,7 @@ namespace Tela_inicial
 
         private void btnComeca_Click(object sender, EventArgs e)
         {
+            int pontos;
             if (txtNome.Text == "" && txtSobrenome.Text == "" && txtEmail.Text == "")
             {
                 MessageBox.Show("Por favor coloque um nome", "ATENÇÂO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -101,9 +102,10 @@ namespace Tela_inicial
                             //pontuação do jogador
                             comando.CommandText = "select count(pergunta) from tb_perguntas where id_jogador="  +id_jogador;
                             SqlDataReader dr_acertos = comando.ExecuteReader();
+                            pontos = dr_acertos.GetInt32(0);
                             dr_acertos.Read();
 
-                            TelaFinal tf = new TelaFinal(id_jogador, jogador, dr_acertos.GetInt32(0));
+                            TelaFinal tf = new TelaFinal(id_jogador, jogador, pontos);
                             tf.ShowDialog();
                             txtNome.Text = "";
                             txtSobrenome.Text = "";
