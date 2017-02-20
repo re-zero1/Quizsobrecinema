@@ -153,6 +153,7 @@
             this.Name = "Paginainicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paginainicial";
+            this.Load += new System.EventHandler(this.Paginainicial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

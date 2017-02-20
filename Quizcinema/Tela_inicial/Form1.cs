@@ -28,10 +28,10 @@ namespace Tela_inicial
 
         private void txtNome_Leave(object sender, EventArgs e)
         {
-            if (txtNome.Text == "")
+           /* if (txtNome.Text == "")
             {
                 txtNome.Text = "Digite seu nome";
-            }
+            }*/
             
         }
 
@@ -102,10 +102,10 @@ namespace Tela_inicial
                             //pontuação do jogador
                             comando.CommandText = "select count(pergunta) from tb_perguntas where id_jogador="  +id_jogador;
                             SqlDataReader dr_acertos = comando.ExecuteReader();
-                            pontos = dr_acertos.GetInt32(0);
+                            
                             dr_acertos.Read();
 
-                            TelaFinal tf = new TelaFinal(id_jogador, jogador, pontos);
+                            TelaFinal tf = new TelaFinal(id_jogador, jogador, dr_acertos.GetInt32(0));
                             tf.ShowDialog();
                             txtNome.Text = "";
                             txtSobrenome.Text = "";
@@ -120,6 +120,11 @@ namespace Tela_inicial
 
 
             }
+        }
+
+        private void Paginainicial_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

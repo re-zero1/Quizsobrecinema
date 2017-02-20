@@ -35,7 +35,7 @@ namespace Tela_inicial
                         comando.Parameters.AddWithValue("Resposcorreta", rdb2.Text);
                         comando.Parameters.AddWithValue("ID_JOGADOR", id_jogador_BD);
                         comando.Parameters.AddWithValue("nivel", "Moderado");
-                        comando.Parameters.AddWithValue("pontos", "");
+                        comando.Parameters.AddWithValue("pontos", 1);
                         conexao.Open();
                         comando.ExecuteNonQuery();
                     }

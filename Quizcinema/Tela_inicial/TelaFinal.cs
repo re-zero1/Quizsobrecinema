@@ -25,7 +25,7 @@ namespace Tela_inicial
             InitializeComponent();
             id_jogador_DB = id_jogador;
             jogadorrecebe2 = jogadorecebe;
-            pontos = pontosrecebe;
+            pontosrecebe = pontos;
             
         }
 
@@ -37,9 +37,9 @@ namespace Tela_inicial
 
         private void btnJogardenovo_Click(object sender, EventArgs e)
         {
-            /*Paginainicial pn = new Paginainicial();
+            Paginainicial pn = new Paginainicial();
             pn.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void TelaFinal_Load(object sender, EventArgs e)
